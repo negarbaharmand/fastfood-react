@@ -1,8 +1,15 @@
 function OrderSummary({ orderItems, incrementQuantity, decrementQuantity }) {
+  const calculateTotal = (orderItems) => {
+    return orderItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  };
+
   return (
-    <div className="mt-4">
+    <div className="m-5">
       <h3>Order Summary</h3>
-      <table>
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>Item</th>
@@ -17,15 +24,18 @@ function OrderSummary({ orderItems, incrementQuantity, decrementQuantity }) {
               <td>{item.title}</td>
               <td>
                 <button
-                  className="btn btn-outline-secondary btn-sm mr-2"
+                  type="button"
+                  className="btn btn-outline-danger btn-sm mr-2"
                   onClick={() => decrementQuantity(item)}
                 >
                   {" "}
                   -{" "}
                 </button>
-                {item.quantity}
+                <span style={{ marginRight: "8px", marginLeft: "8px" }}>
+                  {item.quantity}
+                </span>
                 <button
-                  className="btn btn-outline-secondary btn-sm ml-2"
+                  className="btn btn-outline-success btn-sm ml-2"
                   onClick={() => incrementQuantity(item)}
                 >
                   {" "}
@@ -47,13 +57,6 @@ function OrderSummary({ orderItems, incrementQuantity, decrementQuantity }) {
         </tbody>
       </table>
     </div>
-  );
-}
-
-function calculateTotal(orderItems) {
-  return orderItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
   );
 }
 

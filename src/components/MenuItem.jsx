@@ -15,7 +15,15 @@ function MenuItem({ menuItem, addToOrder }) {
               <h5 href="#">{menuItem.title}</h5>
             </h4>
             <p className="card-text">{menuItem.description}</p>
-            <p className="card-text">{menuItem.price} SEK</p>
+            <p className="card-text text-center">{menuItem.price} SEK</p>
+            <div className="text-center">
+              <button
+                className="btn btn-danger"
+                onClick={() => addToOrder(menuItem)}
+              >
+                Add to Orders
+              </button>
+            </div>
           </div>
         </div>
       </div>
