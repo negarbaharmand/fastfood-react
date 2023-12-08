@@ -1,4 +1,4 @@
-function ShowOrder({ orderItems, incrementQuantity, decrementQuantity }) {
+function OrderSummary({ orderItems, incrementQuantity, decrementQuantity }) {
   return (
     <div className="mt-4">
       <h3>Order Summary</h3>
@@ -57,4 +57,4 @@ function calculateTotal(orderItems) {
   );
 }
 
-export default ShowOrder;
+export default OrderSummary;
