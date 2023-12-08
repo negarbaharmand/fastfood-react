@@ -8,6 +8,9 @@ dependencies:
   bootstrap:
     specifier: ^5.3.2
     version: 5.3.2(@popperjs/core@2.11.8)
+  light-switch-bootstrap:
+    specifier: ^0.1.5
+    version: 0.1.5
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1750,6 +1753,10 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
     dev: true
+
+  /light-switch-bootstrap@0.1.5:
+    resolution: {integrity: sha512-xHe/Z4R2oT//K5QwqthJizy6E5lKOpLrJ1OkermIQ/9Xai16zhEYn903uUG0buGtqMgVcayv1x96pboP1JUIQg==}
+    dev: false
 
   /locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
