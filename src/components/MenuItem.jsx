@@ -1,16 +1,25 @@
 function MenuItem({ menuItem, addToOrder }) {
   return (
-    <div className="card mb-4 col-md-4">
-      <img className="card-img-top" src={menuItem.image} alt={menuItem.title} />
-      <div className="card-body">
-        <h5 className="card-title">{menuItem.title}</h5>
-        <p className="card-text">{menuItem.description}</p>
-        <p className="card-text">{menuItem.price} SEK</p>
+    <>
+      <div className="col-lg-4 col-sm-6 mb-4">
+        <div className="card p-3 h-100">
+          <a href="#">
+            <img
+              className="card-img-top"
+              src={menuItem.image}
+              alt={menuItem.title}
+            />
+          </a>
+          <div className="card-body">
+            <h4 className="card-title">
+              <h5 href="#">{menuItem.title}</h5>
+            </h4>
+            <p className="card-text">{menuItem.description}</p>
+            <p className="card-text">{menuItem.price} SEK</p>
+          </div>
+        </div>
       </div>
-      <div className="card-footer text-center">
-        <button onClick={() => addToOrder(menuItem)}>Add to Order</button>
-      </div>
-    </div>
+    </>
   );
 }
 
