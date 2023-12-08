@@ -4,7 +4,6 @@ import OrderSummary from "./components/OrderSummary";
 import HeaderBox from "./components/HeaderBox";
 
 function App() {
-  const sampleImage = "https://placehold.co/400";
   const menuItemData = [
     {
       title: "🍕 Pizza",
@@ -79,11 +78,13 @@ function App() {
   };
 
   const decrementQuantity = (menuItem) => {
-    const updatedOrder = orderItems.map((item) =>
-      item.title === menuItem.title && item.quantity > 1
-        ? { ...item, quantity: item.quantity - 1 }
-        : item
-    );
+    const updatedOrder = orderItems
+      .map((item) =>
+        item.title === menuItem.title
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+      .filter((item) => item.quantity > 0);
     setOrderItems(updatedOrder);
   };
   return (

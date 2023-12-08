@@ -25,7 +25,7 @@ function OrderSummary({ orderItems, incrementQuantity, decrementQuantity }) {
               <td>
                 <button
                   type="button"
-                  className="btn btn-outline-danger btn-sm mr-2"
+                  className="btn btn-outline-danger btn-sm"
                   onClick={() => decrementQuantity(item)}
                 >
                   {" "}
@@ -35,7 +35,7 @@ function OrderSummary({ orderItems, incrementQuantity, decrementQuantity }) {
                   {item.quantity}
                 </span>
                 <button
-                  className="btn btn-outline-success btn-sm ml-2"
+                  className="btn btn-outline-success btn-sm"
                   onClick={() => incrementQuantity(item)}
                 >
                   {" "}
