@@ -8,14 +8,19 @@ function MenuItem({ menuItem, addToOrder }) {
               className="card-img-top"
               src={menuItem.image}
               alt={menuItem.title}
+              onClick={() => addToOrder(menuItem)}
             />
           </a>
           <div className="card-body">
             <h4 className="card-title">
-              <h5 href="#">{menuItem.title}</h5>
+              <div>
+                <h5 href="#">{menuItem.title}</h5>
+              </div>
             </h4>
             <p className="card-text">{menuItem.description}</p>
-            <p className="card-text text-center">{menuItem.price} SEK</p>
+            <p className="card-text text-center fw-bold">
+              {menuItem.price} SEK
+            </p>
             <div className="text-center">
               <button
                 className="btn btn-danger"

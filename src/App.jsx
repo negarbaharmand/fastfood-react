@@ -2,6 +2,8 @@ import { useState } from "react";
 import MenuList from "./components/MenuList";
 import OrderSummary from "./components/OrderSummary";
 import HeaderBox from "./components/HeaderBox";
+import { useEffect } from "react";
+import burgerImg from "./assets/images/burger.jpeg";
 
 function App() {
   const menuItemData = [
@@ -9,47 +11,50 @@ function App() {
       title: "🍕 Pizza",
       description:
         "A classic Margherita pizza with tomato, mozzarella, and basil.",
-      image: "https://placehold.co/400",
+      image: "https://placehold.co/400x400",
       price: 175,
     },
     {
       title: "🍔 Hamburger",
-      description:
-        "Juicy beef patty topped with lettuce, tomato, and cheese on a sesame seed bun.",
-      image: "https://placehold.co/400",
+      description: "Juicy beef patty topped with lettuce on a sesame seed bun.",
+      image: burgerImg,
       price: 150,
     },
     {
       title: "🍝 Spaghetti",
       description:
-        "Spaghetti pasta served with rich marinara sauce and grated Parmesan cheese.",
-      image: "https://placehold.co/400",
+        "Spaghetti served with rich marinara sauce and Parmesan cheese.",
+      image: "https://placehold.co/400x400",
       price: 120,
     },
     {
       title: "🍣 Sushi",
-      description:
-        "Fresh and flavorful sushi rolls with a variety of fish and vegetables.",
-      image: "https://placehold.co/400",
+      description: "Fresh sushi rolls with a variety of fish and vegetables.",
+      image: "https://placehold.co/400x400",
       price: 200,
     },
     {
       title: "🥗 Salad",
       description:
-        "A healthy salad bowl with mixed greens, cherry tomatoes, and balsamic vinaigrette.",
-      image: "https://placehold.co/400",
+        "A healthy salad bowl with mixed greens and balsamic vinaigrette.",
+      image: "https://placehold.co/400x400",
       price: 90,
     },
     {
       title: "🍦 Ice Cream",
       description:
         "Creamy vanilla ice cream topped with chocolate sauce and sprinkles.",
-      image: "https://placehold.co/400",
+      image: "https://placehold.co/400x400",
       price: 50,
     },
   ];
 
   const [orderItems, setOrderItems] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleModeHandler = () => {
+    setDarkMode(!darkMode);
+  };
 
   const addToOrder = (menuItem) => {
     const existingItem = orderItems.find(
@@ -87,14 +92,21 @@ function App() {
       .filter((item) => item.quantity > 0);
     setOrderItems(updatedOrder);
   };
+
+  useEffect(() => {
+    const colorMode = darkMode ? "dark" : "light";
+    document.body.setAttribute("data-bs-theme", colorMode);
+  }, [darkMode]);
+
   return (
     <>
-      <HeaderBox />
+      <HeaderBox toggleMenu={toggleModeHandler} darkMode={darkMode} />
       <MenuList menuItems={menuItemData} addToOrder={addToOrder} />
       <OrderSummary
         orderItems={orderItems}
         incrementQuantity={incrementQuantity}
         decrementQuantity={decrementQuantity}
+        id="order-summary"
       />
     </>
   );

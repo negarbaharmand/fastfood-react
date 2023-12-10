@@ -1,44 +1,13 @@
-import { useState } from "react";
-
-const HeaderBox = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleModeHandler = () => {
-    setDarkMode(!darkMode);
-  };
-
+const HeaderBox = ({ toggleMenu, darkMode }) => {
   return (
-    // <div className="container-fluid mt-4">
-    //   <nav
-    //     className={`navbar navbar-expand-lg ${
-    //       darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"
-    //     } `}
-    //   >
-    //     <div className="container-fluid">
-    //       <a className="navbar-brand" href="#">
-    //         Fast Food
-    //         <img src={darkMode ? "/light.png" : "/light.png"} alt="logo" />
-    //       </a>
-    //     </div>
-    //   </nav>
-    //   <div className="container">
-    //     <button
-    //       type="button"
-    //       className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
-    //       onClick={toggleModeHandler}
-    //     >
-    //       {darkMode ? "Dark Mode" : "Light Mode"}
-    //     </button>
-    //   </div>
-    // </div>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div
         className={`container-fluid ${
           darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"
         } `}
       >
         <a className="navbar-brand" href="#">
-          FoodMenu
+          FoodLand
         </a>
         <button
           className="navbar-toggler"
@@ -61,7 +30,12 @@ const HeaderBox = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Order Summary
+                About us
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Contact us
               </a>
             </li>
           </ul>
@@ -77,7 +51,7 @@ const HeaderBox = () => {
               className="form-check-input"
               type="checkbox"
               id="lightSwitch"
-              onClick={toggleModeHandler}
+              onClick={toggleMenu}
               defaultChecked={darkMode ? true : false}
             />
           </div>

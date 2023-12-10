@@ -2,7 +2,7 @@ import MenuItem from "./MenuItem";
 
 function MenuList({ menuItems, addToOrder }) {
   return (
-    <div className="row">
+    <div className="row m-3">
       {menuItems.map((menuItem) => (
         <MenuItem
           key={menuItem.title}
