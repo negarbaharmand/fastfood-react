@@ -4,6 +4,11 @@ import OrderSummary from "./components/OrderSummary";
 import HeaderBox from "./components/HeaderBox";
 import { useEffect } from "react";
 import burgerImg from "./assets/images/burger.jpeg";
+import icecreamImg from "./assets/images/icecream.jpeg";
+import pizzaImg from "./assets/images/pizza.jpeg";
+import saladImg from "./assets/images/salad.jpeg";
+import spaghettiImg from "./assets/images/spaghetti.jpeg";
+import sushiImg from "./assets/images/sushi.jpeg";
 
 function App() {
   const menuItemData = [
@@ -11,7 +16,7 @@ function App() {
       title: "🍕 Pizza",
       description:
         "A classic Margherita pizza with tomato, mozzarella, and basil.",
-      image: "https://placehold.co/400x400",
+      image: pizzaImg,
       price: 175,
     },
     {
@@ -24,27 +29,27 @@ function App() {
       title: "🍝 Spaghetti",
       description:
         "Spaghetti served with rich marinara sauce and Parmesan cheese.",
-      image: "https://placehold.co/400x400",
+      image: spaghettiImg,
       price: 120,
     },
     {
       title: "🍣 Sushi",
       description: "Fresh sushi rolls with a variety of fish and vegetables.",
-      image: "https://placehold.co/400x400",
+      image: sushiImg,
       price: 200,
     },
     {
       title: "🥗 Salad",
       description:
         "A healthy salad bowl with mixed greens and balsamic vinaigrette.",
-      image: "https://placehold.co/400x400",
+      image: saladImg,
       price: 90,
     },
     {
       title: "🍦 Ice Cream",
       description:
         "Creamy vanilla ice cream topped with chocolate sauce and sprinkles.",
-      image: "https://placehold.co/400x400",
+      image: icecreamImg,
       price: 50,
     },
   ];
