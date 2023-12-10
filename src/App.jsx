@@ -105,26 +105,29 @@ function App() {
   }, [darkMode]);
 
   return (
-    <>
+    <div>
       <HeaderBox
         toggleMenu={toggleModeHandler}
         darkMode={darkMode}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      <MenuList
-        menuItems={menuItemData.filter((menuItem) =>
-          menuItem.title.toLowerCase().includes(searchQuery.toLowerCase())
-        )}
-        addToOrder={addToOrder}
-      />
-      <OrderSummary
-        orderItems={orderItems}
-        incrementQuantity={incrementQuantity}
-        decrementQuantity={decrementQuantity}
-        id="order-summary"
-      />
-    </>
+
+      <div className="app-wrapper" style={{ margin: "40px 100px 100px 100px" }}>
+        <MenuList
+          menuItems={menuItemData.filter((menuItem) =>
+            menuItem.title.toLowerCase().includes(searchQuery.toLowerCase())
+          )}
+          addToOrder={addToOrder}
+        />
+        <OrderSummary
+          orderItems={orderItems}
+          incrementQuantity={incrementQuantity}
+          decrementQuantity={decrementQuantity}
+          id="order-summary"
+        />
+      </div>
+    </div>
   );
 }
 
