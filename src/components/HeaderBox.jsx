@@ -1,4 +1,4 @@
-const HeaderBox = ({ toggleMenu, darkMode }) => {
+const HeaderBox = ({ toggleMenu, darkMode, searchQuery, setSearchQuery }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div
@@ -39,6 +39,24 @@ const HeaderBox = ({ toggleMenu, darkMode }) => {
               </a>
             </li>
           </ul>
+          <div className="d-flex justify-content-center align-items-center flex-grow-1">
+            <form className="form-inline my-2 my-lg-0 mr-2">
+              <input
+                className="form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </form>
+            <button
+              className="btn btn-outline-danger m-2 my-sm-0"
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
           <div className="form-check form-switch">
             <label
               className={`form-check-label ${darkMode ? "text-white" : null}`}

@@ -56,6 +56,7 @@ function App() {
 
   const [orderItems, setOrderItems] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleModeHandler = () => {
     setDarkMode(!darkMode);
@@ -105,8 +106,18 @@ function App() {
 
   return (
     <>
-      <HeaderBox toggleMenu={toggleModeHandler} darkMode={darkMode} />
-      <MenuList menuItems={menuItemData} addToOrder={addToOrder} />
+      <HeaderBox
+        toggleMenu={toggleModeHandler}
+        darkMode={darkMode}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
+      <MenuList
+        menuItems={menuItemData.filter((menuItem) =>
+          menuItem.title.toLowerCase().includes(searchQuery.toLowerCase())
+        )}
+        addToOrder={addToOrder}
+      />
       <OrderSummary
         orderItems={orderItems}
         incrementQuantity={incrementQuantity}
