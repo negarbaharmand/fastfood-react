@@ -115,14 +115,8 @@ function App() {
 
       <div className="app-wrapper" style={{ margin: "40px 100px 100px 100px" }}>
         <MenuList
-          menuItems={menuItemData.filter(
-            (menuItem) =>
-              menuItem.title
-                .toLowerCase()
-                .includes(searchQuery.toLowerCase()) ||
-              menuItem.description
-                .toLowerCase()
-                .includes(searchQuery.toLocaleLowerCase())
+          menuItems={menuItemData.filter((menuItem) =>
+            menuItem.title.toLowerCase().includes(searchQuery.toLowerCase())
           )}
           addToOrder={addToOrder}
         />
