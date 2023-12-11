@@ -113,7 +113,7 @@ function App() {
         setSearchQuery={setSearchQuery}
       />
 
-      <div className="app-wrapper" style={{ margin: "40px 100px 100px 100px" }}>
+      <div className="app-wrapper" style={{ margin: "40px 100px 400px 100px" }}>
         <MenuList
           menuItems={menuItemData.filter(
             (menuItem) =>

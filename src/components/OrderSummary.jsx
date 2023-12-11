@@ -7,7 +7,7 @@ function OrderSummary({ orderItems, incrementQuantity, decrementQuantity }) {
   };
 
   return (
-    <div className="m-5">
+    <div className="fixed-bottom bg-light p-1 mx-4">
       <h3>Order Summary</h3>
       <table className="table table-hover">
         <thead>
