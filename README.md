@@ -1,8 +1,20 @@
-# React + Vite
+# Fast Food Menu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the FastFood React App! Explore a fast-food menu, add items to your order, and toggle dark mode for a personalized experience.
 
-Currently, two official plugins are available:
+### Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app is deployed and accessible at [https://negarbaharmand.com/fastfood-react/](https://negarbaharmand.com/fastfood-react/) .
+
+## Local Development
+
+To run the app locally:
+
+1. Clone this repository.
+2. Navigate to the project directory.
+3. Run:
+
+   ```bash
+   npm install   # Install dependencies
+   npm start     # Run the development server
+   ```
