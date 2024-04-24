@@ -128,6 +128,7 @@ function App() {
         />
         <OrderSummary
           orderItems={orderItems}
+          darkMode={darkMode}
           incrementQuantity={incrementQuantity}
           decrementQuantity={decrementQuantity}
           id="order-summary"
